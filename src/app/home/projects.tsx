@@ -87,7 +87,7 @@ const HeroSection = () => {
             src: "/images/social.png",
             title: "JKUAT SOCIAL ROBOTICS",
             tag: "UI/UX & Frontend",
-            link: "https://www.jkuatsocialroboticslab.com/"
+            link: "https://social-robotics.vercel.app/"
           },
           {
             src: "/images/afridata.png",
