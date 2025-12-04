@@ -23,11 +23,11 @@ export default function Contact() {
         <div className="relative z-10 flex items-center justify-center text-center px-4 sm:px-6 py-12 sm:py-24 bg-transparent">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-              Let's Create Something Beautiful
+              Let&apos;s Create Something Beautiful
             </h1>
             <hr className="border-t border-gray-500 my-4 w-full mx-auto" />
             <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to elevate your digital experience? Let's discuss how thoughtful UI/UX design can transform your vision into a user-centered solution that delivers real value.
+              Ready to elevate your digital experience? Let&apos;s discuss how thoughtful UI/UX design can transform your vision into a user-centered solution that delivers real value.
             </p>
           </div>
         </div>
@@ -37,10 +37,10 @@ export default function Contact() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Info */}
             <div className="p-4 sm:p-6 border border-gray-500 rounded-lg">
-              <h2 className="text-2xl sm:text-4xl font-bold text-white">Let's Connect</h2>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">Let&apos;s Connect</h2>
               <hr className="border-t border-gray-500 my-4 w-full" />
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-300">
-                Whether you need UI/UX design consultation, a complete interface redesign, or want to discuss a new project, I'm here to help create digital experiences that users love.
+                Whether you need UI/UX design consultation, a complete interface redesign, or want to discuss a new project, I&apos;m here to help create digital experiences that users love.
               </p>
               <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
                 <div className="flex items-center space-x-4">
