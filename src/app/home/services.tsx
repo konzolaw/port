@@ -57,7 +57,7 @@ const HeroSection = () => {
     <div className="w-full lg:w-1/2 relative rounded-lg overflow-hidden border border-gray-600">
       <div className="relative w-full h-[400px] lg:h-[500px]">
         <Image
-          src="/images/some.jpg"
+          src="/images/some.JPG"
           alt="Design Showcase"
           fill
           style={{ objectFit: 'contain' }}
