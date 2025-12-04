@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
         <p className="text-gray-300 mb-6">
-          The e-commerce site built for Retail Furnishing is impressive! The seamless shopping experience combined with strong visuals makes it perfect for users looking to buy furniture online.
+          The UI/UX design work on this project is exceptional! The attention to detail in every interaction, combined with the thoughtful user flow and visually stunning interface, creates an experience that's both beautiful and intuitive. Users can navigate effortlessly.
         </p>
         <div className="flex items-center">
           {/* Placeholder for Image */}
@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
         <p className="text-gray-300 mb-6">
-          Konzolos website has a professional yet welcoming design. The content is well-structured, making it easy for users to navigate through resources.
+          Konzolo's design expertise is evident in every pixel. The user-centered approach, combined with impeccable visual hierarchy and accessibility considerations, resulted in a website that's not only professional but truly delightful to use. The design thinking is outstanding.
         </p>
         <div className="flex items-center">
           {/* Placeholder for Image */}
@@ -69,7 +69,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
         <p className="text-gray-300 mb-6">
-          Konzolos website is sleek and engaging. The animations give it a modern touch while maintaining simplicity. Its easy to navigate and clearly showcases his expertise in web development.
+          Konzolo's design work demonstrates a rare combination of artistic vision and user-focused functionality. The micro-interactions, thoughtful animations, and clean aesthetic create an engaging experience that keeps users coming back. His UI/UX skills are truly world-class.
         </p>
         <div className="flex items-center">
           {/* Placeholder for Image */}

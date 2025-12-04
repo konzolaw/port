@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SmokeEffect from "@/components/SmokeEffect";
 
 export default function Contact() {
   return (
@@ -6,24 +7,27 @@ export default function Contact() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/blue.jpeg" 
+          src="/images/blue.jpg" 
           alt="Business Consulting" 
-          layout="fill" 
-          objectFit="cover" 
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-100" 
         />
       </div>
+
+      {/* Smoke Effect */}
+      <SmokeEffect />
 
       <div className="mx-4 sm:mx-8 md:mx-20 border border-gray-500 rounded-lg p-4 sm:p-6 md:p-8">
         {/* Hero Section */}
         <div className="relative z-10 flex items-center justify-center text-center px-4 sm:px-6 py-12 sm:py-24 bg-transparent">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-              Get in Touch
+              Let's Create Something Beautiful
             </h1>
             <hr className="border-t border-gray-500 my-4 w-full mx-auto" />
             <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Have a question or need expert advice? Contact me today.
+              Ready to elevate your digital experience? Let's discuss how thoughtful UI/UX design can transform your vision into a user-centered solution that delivers real value.
             </p>
           </div>
         </div>
@@ -33,10 +37,10 @@ export default function Contact() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Info */}
             <div className="p-4 sm:p-6 border border-gray-500 rounded-lg">
-              <h2 className="text-2xl sm:text-4xl font-bold text-white">Contact Information</h2>
+              <h2 className="text-2xl sm:text-4xl font-bold text-white">Let's Connect</h2>
               <hr className="border-t border-gray-500 my-4 w-full" />
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-300">
-                Reach out to me via phone, email, or visit my office. I am here to help.
+                Whether you need UI/UX design consultation, a complete interface redesign, or want to discuss a new project, I'm here to help create digital experiences that users love.
               </p>
               <div className="mt-6 sm:mt-8 space-y-4 sm:space-y-6">
                 <div className="flex items-center space-x-4">
@@ -54,6 +58,28 @@ export default function Contact() {
                 <div className="flex items-center space-x-4">
                   <span className="text-purple-500 text-xl sm:text-2xl">🌍</span>
                   <p className="text-base sm:text-lg text-gray-300">www.konzolo.vercel.com</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-purple-500 text-xl sm:text-2xl">💼</span>
+                  <a 
+                    href="https://www.linkedin.com/in/irke-konzolo/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-base sm:text-lg text-gray-300 hover:text-purple-400 transition-colors"
+                  >
+                    linkedin.com/in/irke-konzolo
+                  </a>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-purple-500 text-xl sm:text-2xl">🎨</span>
+                  <a 
+                    href="https://dribbble.com/irke-konzolo" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-base sm:text-lg text-gray-300 hover:text-purple-400 transition-colors"
+                  >
+                    dribbble.com/irke-konzolo
+                  </a>
                 </div>
               </div>
             </div>

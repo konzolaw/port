@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TestimonialsSection from "@/app/home/testimonies";
+import SmokeEffect from "@/components/SmokeEffect";
 
 export default function Testimonials() {
   return (
@@ -7,13 +8,16 @@ export default function Testimonials() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/blue.jpeg" 
+          src="/images/blue.jpg" 
           alt="Business Consulting" 
-          layout="fill" 
-          objectFit="cover" 
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-100" 
         />
       </div>
+
+      {/* Smoke Effect */}
+      <SmokeEffect />
 
       {/* Hero Section */}
       <div className="relative z-10 flex items-center justify-center text-center px-6 py-24 bg-transparent bg-opacity-50">

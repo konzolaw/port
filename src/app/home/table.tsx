@@ -17,7 +17,7 @@ const TablesSection = () => {
     <div className="border border-gray-600 rounded-lg p-6 hover:border-purple-500 transition-colors  duration-300">
       <h3 className="text-2xl font-semibold mb-4">Web Design</h3>
       <p className="text-gray-400 mb-4">
-        I specialize in creating visually appealing and functional websites tailored to your needs.
+        I craft pixel-perfect, user-centered web experiences where artistic vision meets functionality. Every layout is meticulously designed with attention to spacing, typography, and visual hierarchy to create intuitive digital journeys.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">UI / UX</span>
@@ -31,7 +31,7 @@ const TablesSection = () => {
     s duration-300">
       <h3 className="text-2xl font-semibold mb-4">Development</h3>
       <p className="text-gray-400 mb-4">
-        I build scalable, efficient, and modern web applications using the latest technologies.
+        I transform designs into flawless, responsive interfaces with meticulous attention to detail. Every component is thoughtfully coded to ensure seamless interactions, smooth animations, and perfect alignment across all devices.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">ReactJS</span>
@@ -48,7 +48,7 @@ const TablesSection = () => {
     s duration-300">
       <h3 className="text-2xl font-semibold mb-4">Graphic Design</h3>
       <p className="text-gray-400 mb-4">
-        I create visually stunning designs that communicate your brand effectively.
+        I blend artistic expression with strategic design thinking to create compelling visual narratives. From color palette selection to iconography, every element is carefully crafted to evoke emotion and enhance brand identity.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">Photoshop</span>
@@ -62,7 +62,7 @@ const TablesSection = () => {
     s duration-300">
       <h3 className="text-2xl font-semibold mb-4">Data Analysis</h3>
       <p className="text-gray-400 mb-4">
-        I analyze data to uncover insights and drive informed decision-making.
+        I transform complex data into beautifully designed, intuitive visualizations. With a designer&apos;s eye, I create dashboards and reports where data clarity meets aesthetic excellence, making insights accessible and engaging.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">Matlab</span>
@@ -76,7 +76,7 @@ const TablesSection = () => {
     s duration-300">
       <h3 className="text-2xl font-semibold mb-4">Project Management</h3>
       <p className="text-gray-400 mb-4">
-        I ensure projects are delivered on time and within scope by leveraging agile methodologies.
+        I orchestrate design projects with precision and attention to every detail—from initial wireframes to final deliverables. My meticulous approach ensures seamless execution while maintaining creative excellence throughout the process.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">Agile</span>
@@ -90,7 +90,7 @@ const TablesSection = () => {
     s duration-300">
       <h3 className="text-2xl font-semibold mb-4">Pitch Decking</h3>
       <p className="text-gray-400 mb-4">
-        I craft compelling pitch decks that effectively communicate your ideas and captivate investors.
+        I design visually striking pitch decks where every slide is a work of art. Through careful composition, typography, and visual flow, I craft presentations that tell compelling stories while captivating audiences with refined aesthetics.
       </p>
       <div className="flex flex-wrap gap-2">
         <span className="bg-gray-700 text-white px-3 py-1 rounded-full text-sm hover:bg-purple-500 transition-colors duration-300">Storytelling</span>

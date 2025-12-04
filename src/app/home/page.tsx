@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 import AboutSection from "./about";
 import ServicesSection from "./services";
@@ -6,20 +8,71 @@ import HappySection from "./happy";
 import TestimonialsSection from "./testimonies";
 import TablesSection from "./table";
 import ProjectsSection from "./projects";
+import SmokeEffect from "@/components/SmokeEffect";
+
+const terminalLines = [
+  "> WAKANDA PORTAL ACTIVATING...",
+  "> Greetings, traveler. The ancestors smile upon you.",
+  "> While moving through these lands, ensure you are",
+  "> scrolling your mouse from the right-hand side.",
+  "> To reveal the face of the next Black Panther,",
+  "> hover over the image on the left... but with style.",
+  "> BEWARE: The spirits may summon sacred smoke.",
+  "> Only the worthy navigate these digital realms.",
+  "> ",
+  "> Safe journey, brave one.",
+  "> (To dismiss this guidance, seek the X above)",
+  "> WAKANDA FOREVER!",
+];
 
 export default function Home() {
+  const [showTerminal, setShowTerminal] = useState(true);
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    if (!showTerminal) return;
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentText = "";
+
+    const typingInterval = setInterval(() => {
+      if (lineIndex < terminalLines.length) {
+        if (charIndex < terminalLines[lineIndex].length) {
+          currentText += terminalLines[lineIndex][charIndex];
+          setDisplayedText(currentText);
+          charIndex++;
+        } else {
+          currentText += "\n";
+          setDisplayedText(currentText);
+          lineIndex++;
+          charIndex = 0;
+        }
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(typingInterval);
+    };
+  }, [showTerminal]);
+
   return (
     <main className="relative overflow-x-hidden overflow-y-auto">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/blue.jpeg" 
+          src="/images/blue.jpg" 
           alt="Business Consulting" 
-          layout="fill" 
-          objectFit="cover" 
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-100" 
         />
       </div>
+
+      {/* Smoke Effect */}
+      <SmokeEffect />
 
       {/* Page Content */}
       <div className="relative z-10 border border-gray-800 rounded-lg p-4 sm:p-6 mx-4 sm:mx-8 mt-10 sm:mt-20">
@@ -29,29 +82,76 @@ export default function Home() {
           <div className="w-full md:w-1/3 relative">
             <div className="sticky top-0 h-screen">
               <div
-                className="relative h-screen w-full border border-gray-800 rounded-lg overflow-hidden transform rotate-[1deg] shadow-lg"
+                className="relative h-screen w-full border border-gray-800 rounded-lg overflow-hidden transform rotate-[1deg] shadow-lg group"
                 style={{
                   transform: 'perspective(1000px) rotateY(15deg) rotateX(-2deg)',
                   border: '2px solid rgba(255, 255, 255, 0.2)',
                 }}
               >
+                {/* Default Image - Black Panther */}
                 <Image
                   src="/images/blackPanther.jpeg"
                   alt="Developer Image"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-l-lg"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-l-lg transition-opacity duration-500 group-hover:opacity-0"
+                />
+                {/* Hover Image - Iyke */}
+                <Image
+                  src="/images/iyke.jpg"
+                  alt="Iyke Konzolo"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-l-lg transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
               </div>
             </div>
           </div>
 
-          <div className="w-full md:w-2/3 h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth ml-0 md:ml-20 mr-0 md:mr-20 scrollbar-hide">
+          <div className="w-full md:w-2/3 h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth ml-0 md:ml-20 mr-0 md:mr-20 scrollbar-hide relative">
+            {/* Translucent Overlay - Only visible when terminal is showing */}
+            {showTerminal && (
+              <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 pointer-events-none" />
+            )}
+
+            {/* Terminal Instruction Box */}
+            {showTerminal && (
+              <div 
+                className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-black/90 backdrop-blur-md border-2 border-white/60 rounded-md shadow-2xl pointer-events-auto"
+                style={{ width: '360px' }}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowTerminal(false)}
+                  className="absolute top-2 right-2 text-purple-300 hover:text-white transition-colors duration-200 z-10"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                <div className="p-4">
+                  {/* Header */}
+                  <div className="mb-2 pb-2 border-b border-purple-400/30">
+                    <h3 className="font-mono text-sm font-bold text-purple-300 tracking-wider">
+                      ⚠️ STRICTLY FOR WAKANDA PEOPLE
+                    </h3>
+                  </div>
+
+                  {/* Terminal Content - Grows with content */}
+                  <div className="font-mono text-xs leading-relaxed text-purple-400 whitespace-pre-wrap">
+                    {displayedText}
+                    <span className="animate-pulse inline-block w-1.5 h-3 bg-purple-400 ml-0.5"></span>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="flex mt-10 sm:mt-30 justify-center p-4">
               <div className="text-left">
                 <h1 className="text-4xl sm:text-6xl text-white font-extrabold">
-                  Your Vision, My Code! <br /> Together, We’ll Build Innovative and Impactful Digital Experiences 
-                  That Elevate Your Brand to New Heights.
+                  I Design Digital Experiences <br /> That Users Love, Brands Trust, and Teams Celebrate
                 </h1>
                 <div className="flex justify-center mt-10 sm:mt-20 mb-10 sm:mb-30">
 
@@ -95,15 +195,14 @@ export default function Home() {
             <div className="h-auto sm:h-screen flex p-4 text-white text-center">
               <div className="max-w-full sm:max-w-4xl w-full mt-10 sm:mt-40">
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-wide mb-4 sm:mb-8 text-left">MY JOURNEY</h2>
-
-                <div className="space-y-4">
-                  {/* 2022 */}
+                <div className="space-y-2">
+                  {/* 2022 - 2026 */}
                   <div className="relative group border-t border-gray-600 py-4">
                     <div className="flex items-center justify-between">
                       <div className="text-left">
-                        <p className="text-sm text-gray-400">2022 - Ongoing</p>
+                        <p className="text-sm text-gray-400">2022 - 2026</p>
                         <p className="text-lg font-medium group-hover:underline cursor-pointer">
-                          Bsc. Computer Science
+                          Undergraduate Student, Computer Science (JKUAT)
                         </p>
                       </div>
                       <span className="text-gray-400 text-xl">→</span>
@@ -189,9 +288,88 @@ export default function Home() {
                       <li>Specializing in modern frameworks and tools to deliver innovative software solutions.</li>
                     </ul>
                   </div>
+
+                  {/* May 2025 - AFRIDATA Team */}
+                  <div className="relative group border-t border-gray-600 py-4">
+                    <div className="flex items-center justify-between">
+                      <div className="text-left">
+                        <p className="text-sm text-gray-400">May 2025 - Ongoing</p>
+                        <p className="text-lg font-medium group-hover:underline cursor-pointer">
+                          UI/UX Designer - AFRIDATA Team Project
+                        </p>
+                      </div>
+                      <span className="text-gray-400 text-xl">→</span>
+                    </div>
+                    <ul className="mt-4 text-left list-disc pl-6 text-gray-300 hidden group-hover:block">
+                      <li>Designing intuitive user interfaces for data-driven African development initiatives.</li>
+                      <li>Conducting user research to understand diverse African user needs and contexts.</li>
+                      <li>Creating wireframes, prototypes, and high-fidelity designs with attention to accessibility and cultural nuances.</li>
+                      <li>Collaborating with cross-functional teams to ensure design consistency and user-centered solutions.</li>
+                    </ul>
+                  </div>
+
+                  {/* May 2025 - Smart Traffic Management */}
+                  <div className="relative group border-t border-gray-600 py-4">
+                    <div className="flex items-center justify-between">
+                      <div className="text-left">
+                        <p className="text-sm text-gray-400">May 2025 - Ongoing</p>
+                        <p className="text-lg font-medium group-hover:underline cursor-pointer">
+                          UI/UX Designer - Smart Traffic Management System
+                        </p>
+                      </div>
+                      <span className="text-gray-400 text-xl">→</span>
+                    </div>
+                    <ul className="mt-4 text-left list-disc pl-6 text-gray-300 hidden group-hover:block">
+                      <li>Designing real-time traffic monitoring dashboards with focus on data visualization and usability.</li>
+                      <li>Creating user-friendly interfaces for traffic management personnel and city planners.</li>
+                      <li>Implementing responsive design patterns to ensure seamless experience across devices.</li>
+                      <li>Optimizing user flows for quick decision-making in critical traffic scenarios.</li>
+                    </ul>
+                  </div>
+
+                  {/* May 2025 - Comrade Support Initiative */}
+                  <div className="relative group border-t border-gray-600 py-4">
+                    <div className="flex items-center justify-between">
+                      <div className="text-left">
+                        <p className="text-sm text-gray-400">May 2025 - Ongoing</p>
+                        <p className="text-lg font-medium group-hover:underline cursor-pointer">
+                          UI/UX Designer - Comrade Support Initiative
+                        </p>
+                      </div>
+                      <span className="text-gray-400 text-xl">→</span>
+                    </div>
+                    <ul className="mt-4 text-left list-disc pl-6 text-gray-300 hidden group-hover:block">
+                      <li>Designing empathetic, user-centered interfaces for community support platform.</li>
+                      <li>Conducting usability testing to ensure accessibility for diverse user groups.</li>
+                      <li>Creating intuitive navigation systems that facilitate easy access to support resources.</li>
+                      <li>Implementing inclusive design principles to serve users with varying technical literacy.</li>
+                    </ul>
+                  </div>
+
+                  {/* May 2025 - Dovepeak */}
+                  <div className="relative group border-t border-gray-600 py-4">
+                    <div className="flex items-center justify-between">
+                      <div className="text-left">
+                        <p className="text-sm text-gray-400">May 2025 - Ongoing</p>
+                        <p className="text-lg font-medium group-hover:underline cursor-pointer">
+                          Chief Visual Consultant - Dovepeak
+                        </p>
+                      </div>
+                      <span className="text-gray-400 text-xl">→</span>
+                    </div>
+                    <ul className="mt-4 text-left list-disc pl-6 text-gray-300 hidden group-hover:block">
+                      <li>Leading visual design strategy and brand identity development for the organization.</li>
+                      <li>Establishing design systems and style guides to ensure visual consistency across all touchpoints.</li>
+                      <li>Overseeing UI/UX design projects with meticulous attention to typography, color, and composition.</li>
+                      <li>Mentoring design team members and ensuring adherence to design excellence standards.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Spacer */}
+            <div className="h-64 sm:h-80"></div>
 
             {/* Skills Section */}
             <section className="py-12 sm:py-24 px-4 sm:px-6 text-white text-left">

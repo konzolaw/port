@@ -1,19 +1,24 @@
 import Image from "next/image";
 import AboutSection from "@/app/home/about";
 import ServicesSection from "@/app/home/services";
+import SmokeEffect from "@/components/SmokeEffect";
+
 export default function Testimonials() {
   return (
     <main className="relative  overflow-x-hidden overflow-y-auto ">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/blue.jpeg" 
+          src="/images/blue.jpg" 
           alt="Business Consulting" 
-          layout="fill" 
-          objectFit="cover" 
+          fill
+          style={{ objectFit: 'cover' }}
           className="opacity-100" 
         />
       </div>
+
+      {/* Smoke Effect */}
+      <SmokeEffect />
 
 
 
