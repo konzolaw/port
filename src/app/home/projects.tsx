@@ -66,12 +66,6 @@ const HeroSection = () => {
             link: "https://jasiri.vercel.app"
           },
           {
-            src: "/images/lapicure.png",
-            title: "LapiCure",
-            tag: "UI/UX Design",
-            link: "https://lapicure.vercel.app"
-          },
-          {
             src: "/images/smart.png",
             title: "Smart Traffic Management System",
             tag: "UI/UX Design - Ongoing",
@@ -93,18 +87,12 @@ const HeroSection = () => {
             src: "/images/afridata.png",
             title: "AFRIDATA Team Project",
             tag: "UI/UX Designer - Ongoing",
-            link: "#"
+            link: "https://afridata.jhubafrica.com/"
           },
           {
             src: "/images/comrade.png",
             title: "Comrade Support Initiative",
             tag: "UI/UX Designer - Ongoing",
-            link: "#"
-          },
-          {
-            src: "/images/dovepeak.png",
-            title: "Dovepeak",
-            tag: "Chief Visual Consultant - Ongoing",
             link: "#"
           },
           {
