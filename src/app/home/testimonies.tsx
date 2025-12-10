@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
           <div className="w-12 h-12 rounded-full bg-gray-600"></div>
           <div className="ml-4">
             <h3 className="text-lg font-semibold">Douglas Kimani</h3>
-            <p className="text-sm text-gray-400">ICT Department &  JKUAT</p>
+            <p className="text-sm text-gray-400">ICT Department </p>
           </div>
         </div>
       </div>
@@ -75,8 +75,8 @@ const TestimonialsSection = () => {
           {/* Placeholder for Image */}
           <div className="w-12 h-12 rounded-full bg-gray-600"></div>
           <div className="ml-4">
-            <h3 className="text-lg font-semibold">Ann Kibe</h3>
-            <p className="text-sm text-gray-400">Founder & CEO of JKUAT SOCIAL ROBOTICS</p>
+            <h3 className="text-lg font-semibold">Shikaya Aston</h3>
+            <p className="text-sm text-gray-400">Web Developer</p>
           </div>
         </div>
       </div>
